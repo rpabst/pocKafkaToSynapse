@@ -44,8 +44,8 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 * Setup a Databricks Workspace
 * Setup a TestClustr (Standard_DS5_v2, 56G Memory, 16 Cores, 4 Min Workers, 5 Max Workers, 1 Driver)
 * Install following Libraries on Cluster
-- com.databricks:spark-xml_2.12:0.14.0
-- com.microsoft.azure:spark-mssql-connector_2.12:1.2.0
+    - com.databricks:spark-xml_2.12:0.14.0
+    - com.microsoft.azure:spark-mssql-connector_2.12:1.2.0
 
 
 
