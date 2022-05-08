@@ -23,7 +23,7 @@ kafka-topics.sh --bootstrap-server=kafka-odspoc.westeurope.azurecontainer.io:909
 ### 1.2 Message Producer VM
 *Provision a VM (e.g. Standard E8bds v5 (8 vcpus, 64 GiB memory)), Windows 10 Pro.
 *Install Visual Studio Code
-* Copy a set of XML files to a dedicated directory
+*Copy a set of XML files to a dedicated directory
 *Create a new .NET SDK C# Project, add followig Libraries:
 
 ````
