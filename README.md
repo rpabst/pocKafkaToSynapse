@@ -50,6 +50,13 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 
 | File  | Content |
 | ------------- | ------------- |
-| pocScen6_StreamtoSQLCEReducedOpt2.scala  | Content Cell  |
-| pocScen8_Basedon7_5Tables.scala  | Content Cell  |
+| pocScen6_StreamtoSQLCEReducedOpt2.scala  |SQL Server: Custom Code using spark-xml and loading CTE table, most important one  |
+| pocScen8_Basedon7_5Tables.scala  |SQL Server:  Custom Code using spark-xml and loading 5 tables  |
+| pocScen9_BasedOn7_15Tables |SQL Server:  Custom Code using spark-xml and loading 15 tables, 5 tables by parsing, 10 tables just filling with dummy values  |
+| poc_Scen1_StreamToMem.scala | Just Streaming directly to memory  |
+| Scen3_StreamToSQL_CEReduced_OOTB.scala |SQL Server:  Loading CTE Table old, slow OOTB Approach  |
+
+
+
+
 
