@@ -46,7 +46,7 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 * Install following Libraries on Cluster
     - com.databricks:spark-xml_2.12:0.14.0
     - com.microsoft.azure:spark-mssql-connector_2.12:1.2.0
-
+* Load files as desired into Databricks Notebooks and run accordingly
 
 | File  | Content |
 | ------------- | ------------- |
@@ -54,7 +54,7 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 | pocScen8_Basedon7_5Tables.scala  |SQL Server:  Custom Code using spark-xml and loading 5 tables  |
 | pocScen9_BasedOn7_15Tables |SQL Server:  Custom Code using spark-xml and loading 15 tables, 5 tables by parsing, 10 tables just filling with dummy values  |
 | poc_Scen1_StreamToMem.scala | Just Streaming directly to memory  |
-| Scen3_StreamToSQL_CEReduced_OOTB.scala |SQL Server:  Loading CTE Table old, slow OOTB Approach  |
+| pocScen3_StreamToSQL_CEReduced_OOTB.scala |SQL Server:  Loading CTE Table old, slow OOTB Approach  |
 
 
 
