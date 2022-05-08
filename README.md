@@ -35,4 +35,14 @@ kafka-topics.sh --bootstrap-server=kafka-odspoc.westeurope.azurecontainer.io:909
 ````
 Add MessageProducer.cs from this Repo and run the Program. It will send around 25.000 XML Files per second to Kafka
 
+### 1.3 SQL Server / Synapse
+Set up a SQL Server (8 vCores, Gen5) and / or a Synapse Instance (Dedicated SQL Pool, DW400c)
+Run SQL Script of this Repo to create all 15 tables (SQL script is for SQL Server, for Synapse be aware of explicitly define ColumnStore Index, Heap table,.. according to your needs)
+
+
+
+
+
+
+)
 
