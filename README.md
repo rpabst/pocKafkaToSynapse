@@ -3,7 +3,7 @@
 
 ## Setup
 
-#### 1.1 Kafka
+### 1.1 Kafka
 Setup 4 Container Instances, 3 Kafka Brokers and one ZooKeeper, each Container with 0.75 CPU cores and 3 GiB Memory, use following Docker Images: https://hub.docker.com/r/bitnami/kafka/
 
 Set retention period for a dedicated topic
@@ -34,3 +34,5 @@ kafka-topics.sh --bootstrap-server=kafka-odspoc.westeurope.azurecontainer.io:909
 </ItemGroup>
 ````
 Add MessageProducer.cs from this Repo and run the Program. It will send around 25.000 XML Files per second to Kafka
+
+
