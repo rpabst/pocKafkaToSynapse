@@ -48,5 +48,8 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
     - com.microsoft.azure:spark-mssql-connector_2.12:1.2.0
 
 
-
+| File  | Content |
+| ------------- | ------------- |
+| pocScen6_StreamtoSQLCEReducedOpt2.scala  | Content Cell  |
+| pocScen8_Basedon7_5Tables.scala  | Content Cell  |
 
