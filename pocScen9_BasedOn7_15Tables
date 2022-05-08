@@ -1,0 +1,73 @@
+import spark.sqlContext.implicits._
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql._
+import java.util.concurrent.Executors
+import org.apache.spark.sql.functions.udf 
+import org.apache.spark.sql.types._
+import scala.xml._
+
+
+spark.conf.set("spark.streaming.backpressure.enabled","true")
+
+//the maximum rate (in messages per second) at which each Kafka partition will be read
+spark.conf.set("spark.streaming.kafka.maxRatePerPartition", 25000)
+
+//number of messages per second per partition.
+//spark.conf.set("spark.streaming.backpressure.pid.minRate", 500)
+
+
+
+
+val inputFromKafkaStream = 
+  spark.readStream
+    .format("kafka")
+    .option("kafka.bootstrap.servers", "kafka-odspoc.westeurope.azurecontainer.io:9092")
+   .option("subscribe", "dhlpocboundstreamp101")     
+//  .option("subscribe", "dhlpocboundstreamp10,dhlpocboundstreamp101,dhlpocboundstreamp102")     
+    .option("startingOffsets", "latest")  
+    .option("minPartitions", "40")  
+    .option("maxOffsetsPerTrigger", "70000")  //How many records I read max in every MicroBatch execution
+    .option("failOnDataLoss", "true")
+    .load()
+
+val inputFromKafkaStreamCast = inputFromKafkaStream.selectExpr("CAST(value AS STRING)")
+val inputFromKafkaStreamCastWithPk = addHashColumn(inputFromKafkaStreamCast, "PK")
+
+handleStream(inputFromKafkaStreamCastWithPk)
+
+def handleStream(df: DataFrame) = {
+  df
+    .writeStream
+    .outputMode("append")
+    .foreachBatch { (df: DataFrame, batchId: Long) =>
+      df.cache()
+      transformDf(df)
+    }
+    .start()
+}  
+
+   
+def transformDf(df: DataFrame) = {
+  val sinks = Seq(
+    SinkLoader(df, canonicalTrackEvent), 
+   /* SinkLoader(df, packageBatchCardRoutingInformation) */
+    
+    /*SinkLoader(df, identifier),
+    SinkLoader(df, messageHeader),
+    SinkLoader(df, detailSourceInformation),
+    
+   SinkLoader(df, canonicalTrackEventNotificationHeader) ,
+   SinkLoader(df, computedRouteNode),
+   SinkLoader(df, notificationType),
+   SinkLoader(df, packageBatchCard),
+   SinkLoader(df, packageBatchCardPartnerInformation),
+    
+   SinkLoader(df, additionalStatusCode), 
+   SinkLoader(df, packageBatchCardValueAddedService),
+   SinkLoader(df, partnerInformation),
+   SinkLoader(df, partnerRoutingInformation),
+   SinkLoader(df, sollwegEdge)  */
+   
+  ).par
+  sinks.foreach(_.load)
+}
