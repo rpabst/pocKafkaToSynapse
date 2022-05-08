@@ -55,7 +55,9 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 | pocScen9_BasedOn7_15Tables |SQL Server:  Custom Code using spark-xml and loading 15 tables, 5 tables by parsing, 10 tables just filling with dummy values  |
 | poc_Scen1_StreamToMem.scala | Just Streaming directly to memory  |
 | pocScen3_StreamToSQL_CEReduced_OOTB.scala |SQL Server:  Loading CTE Table old, slow OOTB Approach  |
-
+| synapse_1.scala |Synapse:  Custom Code using spark-xml and loading CTE table  |
+| synapse_5.scala | Synapse:  Custom Code using spark-xml  and loading 5 tables    |
+| synapse_15.scala |Synapse:  Custom Code using spark-xml and loading 15 tables, 5 tables by parsing, 10 tables just filling with dummy values   |
 
 
 
