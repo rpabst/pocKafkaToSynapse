@@ -33,7 +33,7 @@ kafka-topics.sh --bootstrap-server=kafka-odspoc.westeurope.azurecontainer.io:909
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.6" />
 </ItemGroup>
 ````
-Add MessageProducer.cs from this Repo and run the Program. It will send around 25.000 XML Files per second to Kafka
+Add MessageProducer.cs from this Repo and run the Program (Configure Kafka Access and XML Directory where to read the files from). It will send around 25.000 XML Files per second to Kafka
 
 ### 1.3 SQL Server / Synapse
 * Set up a SQL Server (8 vCores, Gen5) and / or a Synapse Instance (Dedicated SQL Pool, DW400c)
