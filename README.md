@@ -58,7 +58,7 @@ Add MessageProducer.cs from this Repo and run the Program. It will send around 2
 | synapse_1.scala |Synapse:  Custom Code using spark-xml and loading CTE table  |
 | synapse_5.scala | Synapse:  Custom Code using spark-xml  and loading 5 tables    |
 | synapse_15.scala |Synapse:  Custom Code using spark-xml and loading 15 tables, 5 tables by parsing, 10 tables just filling with dummy values   |
-
+| oldAproach.scala |SQL Server:  OOTB Databricks XPATH Queries with WithColumn Approach, very slow   |
 
 
 
